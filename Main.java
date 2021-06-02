@@ -12,7 +12,6 @@ class User {
     int phone;
     String email;
     Date birth_date;
-    String itineraries;
 }
 
 
@@ -23,5 +22,24 @@ class Admin {
     String email;
 }
 
+class Location {
+    int loc_id;
+    String name;
+    String address;
+    boolean access;
+}
 
+
+class Volunteer extends com.company.User {
+    String itineraries;
+    boolean active;
+}
+
+
+class Amea extends com.company.User {
+    enum disability{}
+    String message;
+    Contact emergency_contacts;
+    Contact doctors;
+}
 
