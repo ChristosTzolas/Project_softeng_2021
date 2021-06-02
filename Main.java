@@ -43,3 +43,28 @@ class Amea extends com.company.User {
     Contact doctors;
 }
 
+class Itinerary {
+    int it_id;
+    int user_id;
+    Date date_and_time;
+    String location;
+    enum to_or_from{}
+    int num_seats;
+    com.company.Amea passenger_ids;
+
+}
+
+class Request {
+    int req_id;
+    com.company.User from_id;
+    enum status{}
+}
+
+class Request_Itinerary {
+    int it_id;
+    String pick_up_location;
+}
+
+class Request_help {
+    com.company.User vol_id;
+}
