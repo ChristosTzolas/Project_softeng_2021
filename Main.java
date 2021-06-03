@@ -68,3 +68,23 @@ class Request_Itinerary {
 class Request_help {
     com.company.User vol_id;
 }
+
+class Event {
+    int event_id;
+    int user_id;
+    Date date_and_time;
+    String description;
+    String title;
+}
+
+class Drug_event {
+    String drug_name;
+    int pack_tables;
+    float dosage;
+    Contact prescripted_by;
+}
+
+class Doctor_event {
+    Contact doctor;
+    String doctor_location;
+}
