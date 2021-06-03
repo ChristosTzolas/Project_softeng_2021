@@ -35,3 +35,33 @@ CONSTRAINT AMEA
 FOREIGN KEY(amea_id) REFERENCES User(user_id)
 ON DELETE CASCADE ON UPDATE CASCADE
 );
+
+CREATE TABLE Volunteer(
+vol_id INT(9)
+active ENUM('Y','N'),
+itineraries
+PRIMARY KEY vol_id),
+CONSTRAINT VOL
+FOREIGN KEY (vol_id) REFERENCES User(user_id)
+ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE Location(
+loc_id INT(9),
+NAME VARCHAR(25),
+address VARCHAR(25),
+access ENUM('Y','N'),
+PRIMARY KEY(loc_id)
+);
+
+CREATE TABLE Event(
+event_id INT(9),
+e_user_id INT(9),
+date_and_time DATETIME,
+description TEXT,
+title VARCHAR(25),
+PRIMARY KEY(event_id),
+CONSTRAINT EVNT
+FOREIGN KEY (e_user_id) REFERENCES User(user_id)
+ON DELETE CASCADE ON UPDATE CASCADE
+);
