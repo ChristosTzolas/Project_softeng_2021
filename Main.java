@@ -88,3 +88,18 @@ class Doctor_event {
     Contact doctor;
     String doctor_location;
 }
+
+class Pharmacy {
+    int ph_id;
+    String name;
+    String location;
+    String schedule;
+}
+
+class Contact {
+    int cont_id;
+    String surname;
+    String name;
+    int phone;
+    String email;
+}
