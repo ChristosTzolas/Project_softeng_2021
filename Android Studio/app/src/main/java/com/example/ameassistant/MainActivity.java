@@ -53,9 +53,9 @@ public class MainActivity extends AppCompatActivity {
                 Uri webaddress = Uri.parse(google);
 
                 Intent gotoGoogle = new Intent(Intent.ACTION_VIEW, webaddress);
-                if (gotoGoogle.resolveActivity(getPackageManager()) != null){
-
-                }
+//                if (gotoGoogle.resolveActivity(getPackageManager()) != null){
+//
+//                }
                 startActivity(gotoGoogle);
             }
         });

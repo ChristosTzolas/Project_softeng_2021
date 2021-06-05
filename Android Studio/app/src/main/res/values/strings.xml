@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">AmeAssistant</string>
+    <string-array name="items">
+        <item>peach</item>
+        <item>tomato</item>
+        <item>squash</item>
+    </string-array>
+
+    <string-array name="prices">
+        <item>$0.99</item>
+        <item>$1.49</item>
+        <item>$0.89</item>
+    </string-array>
+
+    <string-array name="descriptions">
+        <item>Fresh peaches from greece</item>
+        <item>Fresh bio tomatoes</item>
+        <item>Fresh green squash</item>
+    </string-array>
+</resources>
