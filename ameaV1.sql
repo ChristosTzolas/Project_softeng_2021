@@ -112,3 +112,31 @@ to_or_from ENUM('')
 num_seats INT(9),
 PRIMARY KEY(it_id)
 );
+
+
+CREATE TABLE Request(
+req_id INT(9),
+from_id INT(9),
+status ENUM('A','D'),
+PRIMARY KEY(req_id,from_id),
+CONSTRAINT RQST
+FOREIGN KEY (from_id) REFERENCES User(user_id)
+ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE Request_Itinerary(
+req_it_id INT(9),
+pick_up_location VARCHAR(25),
+PRIMARY KEY(req_it_id),
+CONSTRAINT REQIT
+FOREIGN KEY(req_it_id) REFERENCES Itinerary(it_id)
+ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE Request_help
+req_vol_id INT(9),
+PRIMARY KEY(req_vol_id),
+CONSTRAINT RQSTHLP
+FOREIGN KEY (req_vol_id) REFERENCES Volunteer(vol_id)
+ON DELETE CASCADE ON UPDATE CASCADE
+);
