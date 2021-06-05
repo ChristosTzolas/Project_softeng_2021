@@ -184,8 +184,30 @@ public class Controller {
             redirect_to();
         }
     }
-    public void create_itinerary(AcitveEvent event){
-        
+     public void create_itinerary(ActionEvent event){
+        boolean itinerary_confirm;
+
+        enum itinerary_options {Create_itinerary, Modify_or_Delete_itinerary}
+        System.out.println("Options: \nCreate_itinerary \n Modify_or_Delete_itinerary");
+        String itinerary_option = myObj.nextLine();
+
+        if(itinerary_option == "Create_itinerary"){
+            while(itinerary_confirm = false){
+                while(check_validity_values() = false){
+                    //fills form
+                    System.out.println("Fill form with right values");
+                }
+                System.out.println("Confirm?");
+                if(confirm = true){
+                    create_itinerary();
+                }
+                else {
+                    //show form
+                }
+            }
+            //go to main screen
+        }
+
     }
     
     public void edit_itinerary(ActiveEvent event){
@@ -274,7 +296,55 @@ public class Controller {
         }
         return home;
     }
-    
+    public void location_access(ActionEvent event){
+        List<Location> tempLocation = new ArrayList<>();
+        get_user_location();
+        tempLocation.add(user_location);
+        tempLocation.addAll(location);//add every value from location list to tempLocation list
+        for(int i=0; i<tempLocation.size(); i++){
+            System.out.println(tempLocation.get(i).getLocation());
+        }
+        while(event =! "Confirm Location"){
+            if(event = /*chooses location*/){
+                //confirm location
+            }
+            else if(event = /*chooses search bar*/){
+                //show keyboard
+                //user types location name
+                search_location();
+                if(location =! null){
+                    //confim location
+                }
+                else{
+                    System.out.println("Location Not Found");
+                    //confirms
+                    return university_map;
+                }
+            }
+        }
+        while (user_location =! choosen_location){
+            find_best_route();
+            //chooses route
+            show_route_in_app();
+            activate_timer();
+            get_user_location();
+            if(user_location == choosen_location && timer < timer_limit){
+                return home;
+            }
+            else{
+                //route_problem?
+                if(event = "Yes"){
+                    inform_admin();
+                    return //ερώτηση εδώ
+                }
+                else if(event = "No"){
+                    reset_timer();
+                }
+            }
+        }
+
+        
+    }
  
     
     
