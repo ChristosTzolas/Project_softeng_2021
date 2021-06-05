@@ -65,3 +65,50 @@ CONSTRAINT EVNT
 FOREIGN KEY (e_user_id) REFERENCES User(user_id)
 ON DELETE CASCADE ON UPDATE CASCADE
 );
+
+CREATE TABLE Drug_Event(
+drg_ev_id INT(9),	
+drug_name VARCHAR(25),
+pack_tablets INT(9),
+dosage FLOAT(9),
+PRIMARY KEY(d_id)
+CONSTRAINT DRGS
+FOREIGN KEY (drg_ev_id) REFERENCES Event(event_id)
+ON DELETE CASCADE ON UPDATE CASCADE 
+);
+
+CREATE TABLE Doctor_Event(
+dr_ev_id INT(9),
+doctor
+doctor_location VARCHAR(25),
+PRIMARY KEY(dr_ev_id),
+CONSTRAINT DRS
+FOREIGN KEY(dr_ev_id) REFERENCES Event(event_id)
+ON DELETE CASCADE ON UPDATE CASCADE	
+);
+
+CREATE TABLE Contact(
+cont_id INT(9),
+surname VARCHAR (25),
+name VARCHAR(25),
+phone BIGINT(16),
+email VARCHAR(25),
+PRIMARY KEY (cont_id)
+);
+
+CREATE TABLE Pharmacy(
+ph_id INT(9)
+name VARCHAR(25),
+location VARCHAR(25),
+schedule VARCHAR(25),
+PRIMARY KEY(ph_id)
+);
+
+CREATE TABLE Itinerary(
+it_id INT(9),
+date_and_time DATETIME,
+location VARCHAR(25),
+to_or_from ENUM('')
+num_seats INT(9),
+PRIMARY KEY(it_id)
+);
