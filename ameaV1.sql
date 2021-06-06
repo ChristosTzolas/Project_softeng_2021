@@ -154,7 +154,7 @@ ON DELETE CASCADE ON UPDATE CASCADE
 ); 
 
 CREATE TABLE Doctor_list(
-d_amea_id INT(9) AUTO_INCREMENT,
+d_amea_id INT(9),
 d_cont_id INT(9),
 PRIMARY KEY(d_cont_id,d_amea_id),
 CONSTRAINT DAMID
@@ -178,16 +178,16 @@ ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 INSERT INTO Admin VALUES
-('123456789', 'mixalis_the_admin', 'ilovemymama', 'mixalis@hotmail.com'),
-('123456780', 'souleimanis_the_admin', 'ilovemykarkaletsi', 'souleimanis@hotmail.com');
+(NULL, 'mixalis_the_admin', 'ilovemymama', 'mixalis@hotmail.com'),
+(NULL, 'souleimanis_the_admin', 'ilovemykarkaletsi', 'souleimanis@hotmail.com');
 
 INSERT INTO User VALUES
-('0001', 'WLK', 'Kaiba', 'ilovemypapa', 'oikonomou', 'kostas', '6900000000', 'kostas@gmail.com', '1990-3-22'),
-('0002', 'BLD', 'Yugi', 'ilovemygiagia', 'ypodromou', 'adreas', '6900000001', 'anddreas@yahoo.com', '1995-5-2'),
-('0003', 'DF', 'James', 'ilovemytheios', 'zaxareos', 'marios', '6900000002', 'marios@gmail.com', '1996-3-16'),
-('0004', 'NO', 'Jaisy', 'ilovemyulnce', 'kosiopoulou', 'roula', '6900000003', 'roula@gmail.com', '1988-5-12'),
-('0005', 'NO', 'Kim', 'ilovemyprogiagia', 'gkoumou', 'tasia', '6900000004', 'tasia@yahoo.com', '2000-1-1'),
-('0006', 'NO', 'Ron', 'ilovemypetheros', 'jeros', 'stellaras', '6900000005', 'stellaras@gmail.com', '1970-6-16');
+(NULL, 'WLK', 'Kaiba', 'ilovemypapa', 'oikonomou', 'kostas', '6900000000', 'kostas@gmail.com', '1990-3-22'),
+(NULL, 'BLD', 'Yugi', 'ilovemygiagia', 'ypodromou', 'adreas', '6900000001', 'anddreas@yahoo.com', '1995-5-2'),
+(NULL', 'DF', 'James', 'ilovemytheios', 'zaxareos', 'marios', '6900000002', 'marios@gmail.com', '1996-3-16'),
+(NULL, 'NO', 'Jaisy', 'ilovemyulnce', 'kosiopoulou', 'roula', '6900000003', 'roula@gmail.com', '1988-5-12'),
+(NULL, 'NO', 'Kim', 'ilovemyprogiagia', 'gkoumou', 'tasia', '6900000004', 'tasia@yahoo.com', '2000-1-1'),
+(NULL, 'NO', 'Ron', 'ilovemypetheros', 'jeros', 'stellaras', '6900000005', 'stellaras@gmail.com', '1970-6-16');
 
 INSERT INTO Amea VALUES
 ('0001', 'Thelo voitheia'),
@@ -200,12 +200,12 @@ INSERT INTO Volunteer VALUES
 ('0006', 'N');
 
 INSERT INTO Event VALUES
-('000001', '0001', '2008-11-11 13:23:44', 'Rantevou kai kafes me ton Kosta', 'Rantevou me ton Kosta'),
-('000002', '0002', '2010-12-13 13:23:44', 'Rantevou me ton pathologo', 'Pathologos'),
-('000003', '0003', '2012-01-01 13:23:44', 'To amoxyl ana 8 wres', 'Amoxyl'),
-('000004', '0004', '2010-02-02 13:23:44', 'Kafes kai rantevou me tin papalavrena', 'Rantevou sta tyfla'),
-('000005', '0005', '2010-03-03 13:23:44', 'Rantevou me ton ofthalmiatro', 'Ofthalmiatros'),
-('000006', '0006', '2010-04-04 13:23:44', 'To xapi gia tin piesi meta apo to fagito', 'xapi piesis');
+(NULL, '0001', '2008-11-11 13:23:44', 'Rantevou kai kafes me ton Kosta', 'Rantevou me ton Kosta'),
+(NULL, '0002', '2010-12-13 13:23:44', 'Rantevou me ton pathologo', 'Pathologos'),
+(NULL, '0003', '2012-01-01 13:23:44', 'To amoxyl ana 8 wres', 'Amoxyl'),
+(NULL, '0004', '2010-02-02 13:23:44', 'Kafes kai rantevou me tin papalavrena', 'Rantevou sta tyfla'),
+(NULL, '0005', '2010-03-03 13:23:44', 'Rantevou me ton ofthalmiatro', 'Ofthalmiatros'),
+(NULL, '0006', '2010-04-04 13:23:44', 'To xapi gia tin piesi meta apo to fagito', 'xapi piesis');
 
 INSERT INTO Drug_Event VALUES
 ('000003', 'Amoxyl', '18', '1'),
@@ -216,28 +216,28 @@ INSERT INTO Doctor_Event VALUES
 ('000005', 'Zaimi 5');
 
 INSERT INTO Location VALUES
-('0001','Biblioteca','Ermou 6','Y'),
-('0002','Pritania','Ermou 1','Y'),
-('0003','CEID','Ermou 2','N');
+(NULL,'Biblioteca','Ermou 6','Y'),
+(NULL,'Pritania','Ermou 1','Y'),
+(NULL,'CEID','Ermou 2','N');
 
 INSERT INTO Contact VALUES
-('0001','Vlaxos','Manolis','2100102030','vmanolis@gmail.com'),
-('0002','Manolidou','Maria','2101010103','mMaria@gmail.com'),
-('0003','Mixalis','Mixail','2101234567','MixalisMix@gmail.com'),
-('0004','Aggelos','Aggelou','2107894561','AggelosAGG@gmail.com'),
-('0005','Basilis','Basiliou','2109874562','BasislisB@hmail.com'),
-('0006','Xristos','Tzolas','2108521597','XristosTZ@gmail.com')
-('0007','Bob','Bob','2107534896','BobBob@gmail.com'),
-('0008','Robert','Robert','2107891235','RobertRobert@gmail.com'),
-('0009','Frank','Frank','2103698521',"FrankFrank@gmail.com");
+(NULL,'Vlaxos','Manolis','2100102030','vmanolis@gmail.com'),
+(NULL,'Manolidou','Maria','2101010103','mMaria@gmail.com'),
+(NULL,'Mixalis','Mixail','2101234567','MixalisMix@gmail.com'),
+(NULL,'Aggelos','Aggelou','2107894561','AggelosAGG@gmail.com'),
+(NULL,'Basilis','Basiliou','2109874562','BasislisB@hmail.com'),
+(NULL,'Xristos','Tzolas','2108521597','XristosTZ@gmail.com'),
+(NULL,'Bob','Bob','2107534896','BobBob@gmail.com'),
+(NULL,'Robert','Robert','2107891235','RobertRobert@gmail.com'),
+(NULL,'Frank','Frank','2103698521',"FrankFrank@gmail.com");
 
 INSERT INTO Itinerary VALUES
-('000001','0004','2021-5-7 13:45:00','Agia Sofia','UNI','2'),
-('000002','0005','2021-5-12 18:20:00','Plateia Georgiou','CENTER','3');
+(NULL,'0004','2021-5-7 13:45:00','Agia Sofia','UNI','2'),
+(NULL,'0005','2021-5-12 18:20:00','Plateia Georgiou','CENTER','3');
 
 INSERT INTO Request VALUES
-('00001','0001','A'),
-('00002','0002','D');
+(NULL,'0001','A'),
+(NULL,'0002','D');
 
 INSERT INTO Request_Itinerary VALUES
 ('00001','Thessalonikis 56'),
