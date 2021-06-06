@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         goCalendarBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent Intent1 = new Intent(getApplicationContext(), Calendar.class);
+                Intent Intent1 = new Intent(getApplicationContext(), ShowCalendar.class);
                 // Show how to pass information to another activity
                 Intent1.putExtra("com.example.ameassistant.SOMETHING", "Hello World!!!");
                 startActivity(Intent1);
@@ -43,9 +43,19 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        Button goItinerariesBtn = (Button) findViewById(R.id.goItinerariesButton);
+        goItinerariesBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent Intent1 = new Intent(getApplicationContext(), ItineraryOptions.class);
+                // Show how to pass information to another activity
+//                Intent1.putExtra("com.example.ameassistant.SOMETHING", "Hello World!!!");
+                startActivity(Intent1);
+            }
+        });
 
         //Attempt to launch an activity outside our app
-        Button googleBtn = (Button) findViewById(R.id.googleBtn);
+        Button googleBtn = (Button) findViewById(R.id.mapsBtn);
         googleBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v2) {

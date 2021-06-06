@@ -4,25 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ShowCalendar">
+    tools:context=".ItineraryOptions">
 
-    <TextView
-        android:id="@+id/textViewfrommain"
+    <Button
+        android:id="@+id/createItineraryBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="This is the calendar"
+        android:text="Create an Itinerary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.627" />
+        app:layout_constraintVertical_bias="0.351" />
 
-    <CalendarView
-        android:id="@+id/calendarView"
+    <Button
+        android:id="@+id/editDeleteItineraryBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Edit an Itinerary"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/createItineraryBtn"
+        app:layout_constraintVertical_bias="0.222" />
 </androidx.constraintlayout.widget.ConstraintLayout>

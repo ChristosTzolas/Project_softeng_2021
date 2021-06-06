@@ -9,9 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AmeAssistant">
-        <activity android:name=".DetailActivity"></activity>
+        <activity android:name=".CreateItineraryForm"></activity>
+        <activity android:name=".ItineraryOptions" />
+        <activity android:name=".DetailActivity" />
         <activity android:name=".list" />
-        <activity android:name=".Calendar" />
+        <activity android:name=".ShowCalendar" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
