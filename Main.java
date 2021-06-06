@@ -5,6 +5,7 @@ import java.util.Date;
 
 class User {
     int user_id;
+    enum disability {BLD, DF, WLK, NO}
     String username;
     String password;
     String surname;
@@ -22,33 +23,34 @@ class Admin {
     String email;
 }
 
+
 class Location {
     int loc_id;
     String name;
     String address;
-    boolean access;
+    enum access {Y, N}
 }
 
 
 class Volunteer extends com.company.User {
-    String itineraries;
-    boolean active;
+    int vol_id;
+    enum active {Y, N}
 }
 
 
 class Amea extends com.company.User {
-    enum disability{}
+    int amea_id;
     String message;
-    Contact emergency_contacts;
-    Contact doctors;
+    com.company.Contact emergency_contacts;
+    com.company.Contact doctors;
 }
 
 class Itinerary {
     int it_id;
-    int user_id;
-    Date date_and_time;
+    int it_vol_id;
+    DateTimeFormatter date_and_time;
     String location;
-    enum to_or_from{}
+    enum to_or_from{UNI, CENTER}
     int num_seats;
     com.company.Amea passenger_ids;
 
@@ -56,36 +58,40 @@ class Itinerary {
 
 class Request {
     int req_id;
-    com.company.User from_id;
-    enum status{}
+    int from_id;
+    enum status{A, D}
 }
 
 class Request_Itinerary {
-    int it_id;
+    int req_it_id;
     String pick_up_location;
 }
 
 class Request_help {
+    int req_vol_id;
     com.company.User vol_id;
 }
 
 class Event {
     int event_id;
-    int user_id;
-    Date date_and_time;
+    int e_user_id;
+    DateTimeFormatter date_and_time;
     String description;
     String title;
 }
 
-class Drug_event {
+class Drug_event extends com.company.Event {
+    int drg_ev_id;
     String drug_name;
     int pack_tables;
     float dosage;
-    Contact prescripted_by;
+    com.company.Contact prescripted_by;
 }
 
-class Doctor_event {
-    Contact doctor;
+class Doctor_event extends com.company.Event {
+    int dr_ev_id;
+    String doctor_location;
+    com.company.Contact doctor;
     String doctor_location;
 }
 
@@ -102,4 +108,19 @@ class Contact {
     String name;
     int phone;
     String email;
+}
+
+class Passenger_list{
+    int it_id_list;
+    int it_amea_id;
+}
+
+class Doctor_list{
+    int d_amea_id;
+    int d_cont_id;
+}
+
+class Emergency_contact_list{
+    int e_amea_id;
+    int e_cont_id;
 }
