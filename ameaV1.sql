@@ -218,7 +218,7 @@ INSERT INTO Doctor_Event VALUES
 INSERT INTO Location VALUES
 ('0001','Biblioteca','Ermou 6','Y'),
 ('0002','Pritania','Ermou 1','Y'),
-('0003','CEID',)
+('0003','CEID','Ermou 2','N');
 
 INSERT INTO Contact VALUES
 ('0001','Vlaxos','Manolis','2100102030','vmanolis@gmail.com'),
