@@ -1,5 +1,5 @@
-DROP DATABASE AmeaAssistant;
-CREATE DATABASE AmeaAssistant ;
+DROP DATABASE AmeAssistant;
+CREATE DATABASE AmeAssistant ;
 USE AmeaAssistant;
 
 CREATE TABLE Admin(
