@@ -140,3 +140,41 @@ CONSTRAINT RQSTHLP
 FOREIGN KEY (req_vol_id) REFERENCES Volunteer(vol_id)
 ON DELETE CASCADE ON UPDATE CASCADE
 );
+
+INSERT INTO Admin VALUES
+('123456789', 'mixalis_the_admin', 'ilovemymama', 'mixalis@hotmail.com'),
+('123456780', 'souleimanis_the_admin', 'ilovemykarkaletsi', 'souleimanis@hotmail.com');
+
+INSERT INTO User VALUES
+('0001', 'WLK', 'Kaiba', 'ilovemypapa', 'oikonomou', 'kostas', '6900000000', 'kostas@gmail.com', '1990-3-22'),
+('0002', 'BLD', 'Yugi', 'ilovemygiagia', 'ypodromou', 'adreas', '6900000001', 'anddreas@yahoo.com', '1995-5-2'),
+('0003', 'DF', 'James', 'ilovemytheios', 'zaxareos', 'marios', '6900000002', 'marios@gmail.com', '1996-3-16'),
+('0004', 'NO', 'Jaisy', 'ilovemyulnce', 'kosiopoulou', 'roula', '6900000003', 'roula@gmail.com', '1988-5-12'),
+('0005', 'NO', 'Kim', 'ilovemyprogiagia', 'gkoumou', 'tasia', '6900000004', 'tasia@yahoo.com', '2000-1-1'),
+('0006', 'NO', 'Ron', 'ilovemypetheros', 'jeros', 'stellaras', '6900000005', 'stellaras@gmail.com', '1970-6-16');
+
+INSERT INTO Amea VALUES
+('0001', 'Thelo voitheia'),
+('0002', 'Psaxno oxima'),
+('0003', 'Zitaw diathesimo ethelonti');
+
+INSERT INTO Volunteer VALUES
+('0004', 'Y'),
+('0005', 'Y'),
+('0006', 'N');
+
+INSERT INTO Event VALUES
+('000001', '0001', '2008-11-11 13:23:44', 'Rantevou kai kafes me ton Kosta', 'Rantevou me ton Kosta'),
+('000002', '0002', '2010-12-13 13:23:44', 'Rantevou me ton pathologo', 'Pathologos'),
+('000003', '0003', '2012-01-01 13:23:44', 'To amoxyl ana 8 wres', 'Amoxyl'),
+('000004', '0004', '2010-02-02 13:23:44', 'Kafes kai rantevou me tin papalavrena', 'Rantevou sta tyfla'),
+('000005', '0005', '2010-03-03 13:23:44', 'Rantevou me ton ofthalmiatro', 'Ofthalmiatros'),
+('000006', '0006', '2010-04-04 13:23:44', 'To xapi gia tin piesi meta apo to fagito', 'xapi piesis');
+
+INSERT INTO Drug_Event VALUES
+('000003', 'Amoxyl', '18', '1'),
+('000006', 'lobivon', '20', '1');
+
+INSERT INTO Doctor_Event VALUES
+('000002', 'Korinthou 12'),
+('000005', 'Zaimi 5');
