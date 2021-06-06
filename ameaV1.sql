@@ -184,7 +184,7 @@ INSERT INTO Admin VALUES
 INSERT INTO User VALUES
 (NULL, 'WLK', 'Kaiba', 'ilovemypapa', 'oikonomou', 'kostas', '6900000000', 'kostas@gmail.com', '1990-3-22'),
 (NULL, 'BLD', 'Yugi', 'ilovemygiagia', 'ypodromou', 'adreas', '6900000001', 'anddreas@yahoo.com', '1995-5-2'),
-(NULL', 'DF', 'James', 'ilovemytheios', 'zaxareos', 'marios', '6900000002', 'marios@gmail.com', '1996-3-16'),
+(NULL, 'DF', 'James', 'ilovemytheios', 'zaxareos', 'marios', '6900000002', 'marios@gmail.com', '1996-3-16'),
 (NULL, 'NO', 'Jaisy', 'ilovemyulnce', 'kosiopoulou', 'roula', '6900000003', 'roula@gmail.com', '1988-5-12'),
 (NULL, 'NO', 'Kim', 'ilovemyprogiagia', 'gkoumou', 'tasia', '6900000004', 'tasia@yahoo.com', '2000-1-1'),
 (NULL, 'NO', 'Ron', 'ilovemypetheros', 'jeros', 'stellaras', '6900000005', 'stellaras@gmail.com', '1970-6-16');
