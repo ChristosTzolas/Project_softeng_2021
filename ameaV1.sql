@@ -1,6 +1,6 @@
 DROP DATABASE AmeAssistant;
 CREATE DATABASE AmeAssistant ;
-USE AmeaAssistant;
+USE AmeAssistant;
 
 CREATE TABLE Admin(
 adm_id INT(9) AUTO_INCREMENT,
