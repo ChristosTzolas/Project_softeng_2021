@@ -6,6 +6,30 @@
     android:layout_height="match_parent"
     tools:context=".CreateItineraryForm">
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/emergencyCrItBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:clickable="true"
+        app:layout_constraintBottom_toTopOf="@+id/helpCrItBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.954"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/pngegg2" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/helpCrItBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.954"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/help3" />
+
     <EditText
         android:id="@+id/locationItineraryFormText"
         android:layout_width="235dp"
@@ -19,7 +43,7 @@
         app:layout_constraintTop_toBottomOf="@+id/timerTextView" />
 
     <ToggleButton
-        android:id="@+id/toggleButton"
+        android:id="@+id/toOrFromBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -99,6 +123,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="56dp"
         android:text="Submit"
+        android:onClick="OnCreateInt"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"

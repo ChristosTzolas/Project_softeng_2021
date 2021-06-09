@@ -86,5 +86,17 @@ public class MainActivity extends AppCompatActivity {
                 resulttextView.setText(result + "");
             }
         });
+
+//        Button emergencyBtn = (Button) findViewById(R.id.emergencyBtn);
+//        emergencyBtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent Intent1 = new Intent(getApplicationContext(), ShowCalendar.class);
+//                // Show how to pass information to another activity
+//                Intent1.putExtra("com.example.ameassistant.SOMETHING", "Hello World!!!");
+//                startActivity(Intent1);
+//            }
+//        });
+
     }
 }
