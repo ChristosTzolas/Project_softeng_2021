@@ -27,6 +27,17 @@ public class ItineraryOptions extends AppCompatActivity {
             }
         });
 
+        Button editDeleteItinerary = (Button) findViewById(R.id.editDeleteItineraryBtn);
+        editDeleteItinerary.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent Intent1 = new Intent(getApplicationContext(), editItinerary.class);
+                // Show how to pass information to another activity
+//                Intent1.putExtra("com.example.ameassistant.SOMETHING", "Hello World!!!");
+                startActivity(Intent1);
+            }
+        });
+
 
 
     }
