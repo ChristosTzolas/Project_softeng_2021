@@ -7,16 +7,20 @@ import android.os.Bundle;
 import android.text.format.DateFormat;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.ToggleButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Calendar;
 
 public class CreateItineraryForm extends AppCompatActivity {
-
+    EditText it_vol_id, date_and_time, location,to_or_from, num_seats;
+    String str_it_vol_id="7", str_date_and_time, str_location, str_to_or_from, str_num_seats;
     private DatePickerDialog datePickerDialog;
     private Button dateButton;
     TextView timerTextView;
@@ -25,6 +29,9 @@ public class CreateItineraryForm extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+//        it_vol_id = "7";
+        location = (EditText) findViewById(R.id.locationItineraryFormText);
+        num_seats = (EditText) findViewById(R.id.numSeatsItineraryFormText);
         setContentView(R.layout.activity_create_itinerary_form);
         initDatePicker();
         dateButton = findViewById(R.id.datePickerButton);
@@ -43,7 +50,7 @@ public class CreateItineraryForm extends AppCompatActivity {
                                 tMinute = minute;
                                 Calendar calendar = Calendar.getInstance();
                                 calendar.set(0,0,0,tHour,tMinute);
-                                timerTextView.setText(DateFormat.format("hh:mm aa", calendar));
+                                timerTextView.setText(DateFormat.format("HH:mm", calendar));
                             }
                         },12,0,false
                 );
@@ -52,7 +59,13 @@ public class CreateItineraryForm extends AppCompatActivity {
             }
         });
 
-
+//        ToggleButton toOrFromBtn = (ToggleButton) findViewById(R.id.toOrFromBtn);
+//        if(toOrFromBtn.isChecked()){
+//            str_to_or_from = "CENTER";
+//        }else{
+//            str_to_or_from = "UNI";
+//        }
+////        date_and_time = dateButton;
 
     }
 
@@ -93,7 +106,7 @@ public class CreateItineraryForm extends AppCompatActivity {
 
     private String makeDateString(int day, int month, int year)
     {
-        return getMonthFormat(month) + " " + day + " " + year;
+        return year+"-"+month+"-" + day;
     }
 
     private String getMonthFormat(int month)
@@ -132,6 +145,22 @@ public class CreateItineraryForm extends AppCompatActivity {
         datePickerDialog.show();
     }
 
+    public void OnCreateInt(View v){
+        String str_location = location.getText().toString();
+        String str_num_seats = num_seats.getText().toString();
+        String date = dateButton.getText().toString();
+        String time = timerTextView.getText().toString();
+        String str_date_and_time = date+" "+time+":00";
+        ToggleButton toOrFromBtn = (ToggleButton) findViewById(R.id.toOrFromBtn);
+        if(toOrFromBtn.isChecked()){
+            String str_to_or_from = "CENTER";
+        }else{
+            String str_to_or_from = "UNI";
+        }
+        String type = "createItinerary";
+        BackgroundWorker backgroundWorker = new BackgroundWorker(this);
+        backgroundWorker.execute(type, str_it_vol_id, str_date_and_time, str_location,str_to_or_from,str_num_seats);
+    }
 
 
 
