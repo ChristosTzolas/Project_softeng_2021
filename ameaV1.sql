@@ -1,6 +1,6 @@
 DROP DATABASE AmeAssistant;
 CREATE DATABASE AmeAssistant ;
-USE AmeaAssistant;
+USE AmeAssistant;
 
 CREATE TABLE Admin(
 adm_id INT(9) AUTO_INCREMENT,
@@ -11,7 +11,7 @@ PRIMARY KEY(adm_id)
 );
 
 
-CREATE TABLE User(
+CREATE TABLE User_all(
 user_id INT(9) NOT NULL AUTO_INCREMENT ,
 disability ENUM('BLD','DF','WLK','NO'),  -- BLD is for blind, DF is for deaf, WLK is for walking, No is for Volunteer
 username VARCHAR(25),
@@ -30,7 +30,7 @@ amea_id INT(9),
 message TEXT,
 PRIMARY KEY(amea_id),
 CONSTRAINT AMEA
-FOREIGN KEY(amea_id) REFERENCES User(user_id)
+FOREIGN KEY(amea_id) REFERENCES User_all(user_id)
 ON DELETE CASCADE ON UPDATE CASCADE
 );
 
@@ -39,7 +39,7 @@ vol_id INT(9),
 active ENUM('Y','N'),
 PRIMARY KEY(vol_id),
 CONSTRAINT VOL
-FOREIGN KEY (vol_id) REFERENCES User(user_id)
+FOREIGN KEY (vol_id) REFERENCES User_all(user_id)
 ON DELETE CASCADE ON UPDATE CASCADE
 );
 
@@ -51,7 +51,7 @@ access ENUM('Y','N'),
 PRIMARY KEY(loc_id)
 );
 
-CREATE TABLE Event(
+CREATE TABLE Event_all(
 event_id INT(9) AUTO_INCREMENT,
 e_user_id INT(9),
 date_and_time DATETIME,
@@ -59,7 +59,7 @@ description TEXT,
 title VARCHAR(25),
 PRIMARY KEY(event_id),
 CONSTRAINT EVNT
-FOREIGN KEY (e_user_id) REFERENCES User(user_id)
+FOREIGN KEY (e_user_id) REFERENCES User_all(user_id)
 ON DELETE CASCADE ON UPDATE CASCADE
 );
 
@@ -70,7 +70,7 @@ pack_tablets INT(9),
 dosage FLOAT(9),
 PRIMARY KEY(drg_ev_id),
 CONSTRAINT DRGS
-FOREIGN KEY (drg_ev_id) REFERENCES Event(event_id)
+FOREIGN KEY (drg_ev_id) REFERENCES Event_all(event_id)
 ON DELETE CASCADE ON UPDATE CASCADE 
 );
 
@@ -79,7 +79,7 @@ dr_ev_id INT(9),
 doctor_location VARCHAR(25),
 PRIMARY KEY(dr_ev_id),
 CONSTRAINT DRS
-FOREIGN KEY(dr_ev_id) REFERENCES Event(event_id)
+FOREIGN KEY(dr_ev_id) REFERENCES Event_all(event_id)
 ON DELETE CASCADE ON UPDATE CASCADE	
 );
 
@@ -119,7 +119,7 @@ from_id INT(9),
 status ENUM('A','D'),
 PRIMARY KEY(req_id,from_id),
 CONSTRAINT RQST
-FOREIGN KEY (from_id) REFERENCES User(user_id)
+FOREIGN KEY (from_id) REFERENCES User_all(user_id)
 ON DELETE CASCADE ON UPDATE CASCADE
 );
 
@@ -137,7 +137,7 @@ CREATE TABLE Request_help(
 req_vol_id INT(9),
 PRIMARY KEY(req_vol_id),
 CONSTRAINT RQSTHLP
-FOREIGN KEY (req_vol_id) REFERENCES User(user_id)
+FOREIGN KEY (req_vol_id) REFERENCES User_all(user_id)
 ON DELETE CASCADE ON UPDATE CASCADE
 );
 
@@ -181,7 +181,7 @@ INSERT INTO Admin VALUES
 (NULL, 'mixalis_the_admin', 'ilovemymama', 'mixalis@hotmail.com'),
 (NULL, 'souleimanis_the_admin', 'ilovemykarkaletsi', 'souleimanis@hotmail.com');
 
-INSERT INTO User VALUES
+INSERT INTO User_all VALUES
 (NULL, 'WLK', 'Kaiba', 'ilovemypapa', 'oikonomou', 'kostas', '6900000000', 'kostas@gmail.com', '1990-3-22'),
 (NULL, 'BLD', 'Yugi', 'ilovemygiagia', 'ypodromou', 'adreas', '6900000001', 'anddreas@yahoo.com', '1995-5-2'),
 (NULL, 'DF', 'James', 'ilovemytheios', 'zaxareos', 'marios', '6900000002', 'marios@gmail.com', '1996-3-16'),
@@ -199,7 +199,7 @@ INSERT INTO Volunteer VALUES
 ('0005', 'Y'),
 ('0006', 'N');
 
-INSERT INTO Event VALUES
+INSERT INTO Event_all VALUES
 (NULL, '0001', '2008-11-11 13:23:44', 'Rantevou kai kafes me ton Kosta', 'Rantevou me ton Kosta'),
 (NULL, '0002', '2010-12-13 13:23:44', 'Rantevou me ton pathologo', 'Pathologos'),
 (NULL, '0003', '2012-01-01 13:23:44', 'To amoxyl ana 8 wres', 'Amoxyl'),
