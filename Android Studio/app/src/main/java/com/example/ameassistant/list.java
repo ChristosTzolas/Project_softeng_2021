@@ -27,8 +27,8 @@ public class list extends AppCompatActivity {
         prices = res.getStringArray(R.array.prices);
         descriptions = res.getStringArray(R.array.descriptions);
 
-        ItemAdapter itemAdapter = new ItemAdapter(this, items, prices, descriptions);
-        myListView.setAdapter(itemAdapter);
+//        ItemAdapter itemAdapter = new ItemAdapter(this, items, prices, descriptions);
+//        myListView.setAdapter(itemAdapter);
 
         myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
