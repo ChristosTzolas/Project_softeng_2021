@@ -3,6 +3,7 @@ package com.example.ameassistant;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.format.DateFormat;
 import android.view.View;
@@ -19,8 +20,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.Calendar;
 
 public class CreateItineraryForm extends AppCompatActivity {
-    EditText it_vol_id, date_and_time, location,to_or_from, num_seats;
-    String str_it_vol_id="7", str_date_and_time, str_location, str_to_or_from, str_num_seats;
+    EditText it_vol_id, date_and_time, locations,to_or_from, num_seats;
+    String str_it_vol_id="7", str_date_and_time, str_locations, str_to_or_from, str_num_seats;
     private DatePickerDialog datePickerDialog;
     private Button dateButton;
     TextView timerTextView;
@@ -30,7 +31,7 @@ public class CreateItineraryForm extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 //        it_vol_id = "7";
-        location = (EditText) findViewById(R.id.locationItineraryFormText);
+        locations = (EditText) findViewById(R.id.locationItineraryFormText);
         num_seats = (EditText) findViewById(R.id.numSeatsItineraryFormText);
         setContentView(R.layout.activity_create_itinerary_form);
         initDatePicker();
@@ -66,6 +67,15 @@ public class CreateItineraryForm extends AppCompatActivity {
 //            str_to_or_from = "UNI";
 //        }
 ////        date_and_time = dateButton;
+
+        Button submitItineraryFormBtn = (Button) findViewById(R.id.submitItineraryFormBtn);
+        submitItineraryFormBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent Intent1 = new Intent(getApplicationContext(), ItineraryConfirmation.class);
+                startActivity(Intent1);
+            }
+        });
 
     }
 
@@ -146,22 +156,29 @@ public class CreateItineraryForm extends AppCompatActivity {
     }
 
     public void OnCreateInt(View v){
-        String str_location = location.getText().toString();
+        locations = (EditText) findViewById(R.id.locationItineraryFormText);
+        num_seats = (EditText) findViewById(R.id.numSeatsItineraryFormText);
+        dateButton = findViewById(R.id.datePickerButton);
+        timerTextView = findViewById(R.id.timerTextView);
+        String str_to_or_from;
+        String str_locations = locations.getText().toString();
         String str_num_seats = num_seats.getText().toString();
+//        int int_num_seats = Integer.parseInt(num_seats.getText().toString());
         String date = dateButton.getText().toString();
         String time = timerTextView.getText().toString();
         String str_date_and_time = date+" "+time+":00";
         ToggleButton toOrFromBtn = (ToggleButton) findViewById(R.id.toOrFromBtn);
         if(toOrFromBtn.isChecked()){
-            String str_to_or_from = "CENTER";
+            str_to_or_from = "CENTER";
         }else{
-            String str_to_or_from = "UNI";
+            str_to_or_from = "UNI";
         }
         String type = "createItinerary";
         BackgroundWorker backgroundWorker = new BackgroundWorker(this);
-        backgroundWorker.execute(type, str_it_vol_id, str_date_and_time, str_location,str_to_or_from,str_num_seats);
+        backgroundWorker.execute(type, str_locations,str_num_seats); // str_it_vol_id,  str_date_and_time, str_to_or_from,
     }
 
 
 
 }
+
