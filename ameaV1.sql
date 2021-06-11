@@ -43,7 +43,7 @@ FOREIGN KEY (vol_id) REFERENCES User_all(user_id)
 ON DELETE CASCADE ON UPDATE CASCADE
 );
 
-CREATE TABLE Location(
+CREATE TABLE Locations(
 loc_id INT(9) AUTO_INCREMENT,
 name VARCHAR(25),
 address VARCHAR(25),
@@ -104,7 +104,7 @@ CREATE TABLE Itinerary(
 it_id INT(9) AUTO_INCREMENT,
 it_vol_id INT(9),
 date_and_time DATETIME,
-location VARCHAR(25),
+locations VARCHAR(25),
 to_or_from ENUM('UNI','CENTER'), 
 num_seats INT(9),
 PRIMARY KEY(it_id,it_vol_id),
@@ -215,7 +215,7 @@ INSERT INTO Doctor_Event VALUES
 ('000002', 'Korinthou 12'),
 ('000005', 'Zaimi 5');
 
-INSERT INTO Location VALUES
+INSERT INTO Locations VALUES
 (NULL,'Biblioteca','Ermou 6','Y'),
 (NULL,'Pritania','Ermou 1','Y'),
 (NULL,'CEID','Ermou 2','N');
