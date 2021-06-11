@@ -78,7 +78,7 @@ CREATE TABLE Doctor_Event(
 dr_id INT(9),
 dr_ev_id INT(9),
 doctor_location VARCHAR(25),
-PRIMARY KEY(dr_ev_id),
+PRIMARY KEY(dr_ev_id,dr_id),
 CONSTRAINT DRS
 FOREIGN KEY(dr_ev_id) REFERENCES Event_all(event_id)
 ON DELETE CASCADE ON UPDATE CASCADE,
